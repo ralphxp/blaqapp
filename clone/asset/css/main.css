@@ -1,0 +1,306 @@
+
+:root{
+	color-scheme: dark light;
+	--them-red: #bd0000;
+	--them-white:  white;
+	--theme-green: green;
+	--theme-yellow: orange;
+	--theme-blue:  blue;
+}
+
+@media (prefers-color-scheme: dark){
+	body{
+		background: black;
+		color: white;
+	}
+	div{
+		background: black;
+	}
+}
+
+@media (prefers-color-scheme: light){
+	body{
+		background: white;
+		color: black;
+	}
+	div{
+		background: white;
+	}
+}
+
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+
+.app{
+	background: url('../img/bg.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 100vh;
+	width: 100%;
+	display: grid;
+	grid-template-columns:auto;
+	grid-template-rows: 50px auto;
+	grid-template-areas: '_header' '_content';
+	grid-row-gap: 5px;
+}
+
+.header{
+	grid-area: _header;
+	box-shadow: 1px 0px 10px grey;
+	background: var(--them-red);
+	color: var(--them-white) !important;
+	font-size: 20px !important;
+	letter-spacing: 2px;
+	font-family: monospace;
+}
+
+.content{
+	grid-area: _content;
+	padding: 10px;
+	overflow: auto;
+}
+
+
+
+.flex{
+	display: flex;
+}
+
+.a-t{
+	text-decoration: none;
+	color: inherit;
+	padding: none;
+}
+
+.app-navbar{
+	height: inherit;
+	align-items: center;
+	width: inherit;
+	
+}
+
+.app-nav{
+	display: flex;
+	justify-content: space-evenly !important;
+	height: 100%;
+	align-items: center !important;
+	width: 100%;
+	border: 1px solid;
+}
+
+.nav-item{
+	height: inherit;
+	padding: 10px;
+}
+
+
+.d-d{
+	height: inherit;
+	padding: inherit;
+}
+
+.dot{
+	background: var(--them-white);
+	height: 5px;
+	width: 5px;
+	border-radius: 100%;
+}
+
+.content-nav{
+	position: sticky;
+	top: 0px;
+	padding: 10px;
+	background: gainsboro;
+}
+
+.app-btn{
+	padding: 10px;
+	border-radius: 5px;
+	border: none;
+	font-size: 17px;
+	font-weight: 600;
+}
+
+.app-btn.back{
+	color: var(--them-red);
+	visibility: hidden;
+}
+
+.app-btn.balance{
+	color: var(--theme-green);
+}
+
+.thumbnail{
+	padding: 10px;
+	margin: 10px;
+	box-shadow: 1px 1px 15px lightgray;
+	border-radius: 5px;
+	height: 150px;
+	width: 150px;
+	background: rgba(0, 0, 0, .3);
+	color: white;
+}
+
+.app-card{
+	padding: 10px;
+	border: 1px solid lightgray;
+	margin: 10px;
+	border-radius: 5px;
+	background: var(--them-white);
+}
+
+.app-card-head{
+	padding: 5px;
+	text-align: center;
+	font-weight: 600;
+	text-transform: uppercase;
+	color: var(--them-red);
+}
+
+.app-card-body{
+	padding: 5px;
+}
+
+.form-group{
+	margin: 5px auto;
+}
+
+.form-control{
+	width: 100%;
+	padding: 10px;
+	margin: 5px;
+	border: none;
+	border: 1px solid;
+	border-color: lightgray;
+	border-radius: 5px;
+}
+button.form-control{
+	width: max-content;
+	background: var(--them-red);
+	color: var(--them-white);
+	border: none;
+}
+*.require{
+	color: var(--them-red);
+}
+
+label{
+	font-weight: 600;
+	color: gray;
+}
+
+.app-popover button.close{
+	position: absolute;
+	right: 0;
+	top: 0;
+	font-size: 45px;
+	background: none;
+	border: none;
+	color: var(--them-red);
+}
+
+.loader{
+	border-radius: 100%;
+	background: none;
+	animation: rol 0.5s linear infinite;
+	border-top: 2px solid;
+}
+.l-xs{
+	height: 10px;
+	width: 10px;
+}
+.l-ss{
+	height: 250px;
+	width: 25px;
+}
+.l-sm{
+	height: 40px;
+	width: 40px;
+}
+.l-md{
+	height: 50px;
+	width: 50px;
+}
+.l-lg{
+	height: 70px;
+	width: 70px;
+}
+.l-xl{
+	height: 100px;
+	width: 100px;
+}
+@keyframes rol{
+	from{
+		transform: rotate(0deg);
+	}
+	to{
+		transform: rotate(360deg);
+	}
+}
+
+.app-popover{
+	height: 100vh;
+	width: 100%;
+	background: rgba(0, 0, 0, 0.7);
+	display: none;
+	flex-flow: column;
+	justify-content: center;
+	align-items: center;
+	z-index: 999;
+	position: fixed;
+}
+.app-popover.open{
+	display: flex;
+}
+
+*.row{
+	flex-flow: row;
+}
+
+*.column{
+	flex-flow: column;
+}
+
+*.center{
+	justify-content: center !important;
+	align-items: center;
+}
+
+*.wrap{
+	flex-wrap: wrap;
+}
+
+*.space-between{
+	justify-content: space-between;
+}
+
+*.space-around{
+	justify-content: space-around;
+}
+
+*::disabled, *:disabled, *.disabled{
+	background: grey !important;
+}
+
+@media screen and (min-width: 730px){
+	body{
+		display: flex;
+		flex-flow: column;
+		justify-content: center;
+		align-items: center;
+	}
+	.app{
+		width: 730px !important;
+	}
+	.header{
+		position: fixed;
+		top: 0;
+		width: 100%;
+		left: 0;
+		height: 50px;
+	}
+}

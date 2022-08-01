@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>BlaqApp | Dashboard</title>
+	<link rel="canonical" href="/" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<!-- Icons and Colors -->
+	<link rel="apple-touch-icon" sizes="180x180" href="../asset/icons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="../asset/icons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="../asset/icons/favicon-16x16.png">
+	<link rel="manifest" href="../manifest.json">
+	<link rel="mask-icon" href="../asset/icons/safari-pinned-tab.svg" color="#000000">
+	<link rel="shortcut icon" href="../asset/icons/favicon.ico">
+	<meta name="msapplication-TileColor" content="#000000">
+	<meta name="msapplication-TileImage" content="../asset/icons/mstile-144x144.png">
+	<meta name="msapplication-config" content="../browserconfig.xml">
+	<meta name="theme-color" content="#000000">
+
+	<script>
+		if ("serviceWorker" in navigator) {
+			window.addEventListener("load", () => {
+				navigator.serviceWorker && navigator.serviceWorker.register("../sw.js");
+			});
+		}
+	</script>
+
+	<link rel="stylesheet" type="text/css" href="../asset/css/main.css">
+
+</head>
+<body>
+
+	<div class="app">
+		<header class="header">
+			
+		</header>
+		<content class="content flex wrap center">
+			<div class="thumbnail">
+				<div class="thumbnail-image"></div>
+				<big>Token Recovery</big>
+			</div>
+			<div class="thumbnail">
+				<big>Social Media Acount Recovery</big>
+			</div>
+			<div class="thumbnail">
+				<big>Lost Crypto Recovery</big>
+			</div>
+			<div class="thumbnail">
+				<big>Location Tracker</big>
+			</div>
+			<div class="thumbnail">
+				<big>Other Bills Recovery</big>
+			</div>
+			<div class="thumbnail">
+				<big>Chat Hacker/Other Complain</big>
+			</div>
+
+			<!-- <div class="thumbnail"></div>
+			<div class="thumbnail"></div>
+			<div class="thumbnail"></div>
+			<div class="thumbnail"></div>
+			<div class="thumbnail"></div> -->
+		</content>
+		<div class="app-popover">
+			<div class="app-card" style="width:90%">
+				<div class="app-card-head"><strong>ALert</strong></div>
+				<div class="app-card-body">
+					<p>You haven't subscribe yet, to access our service you have to subscribe</p>
+					<button class="app-btn form-control">Subscribe To Continue</button>
+					<button class="app-btn close-b">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+<script>
+	const popover = document.querySelector('.app-popover');
+	const cbtn = document.querySelector('.close-b	');
+
+	cbtn?
+	cbtn.addEventListener('click', e=>{
+		e.preventDefault();
+		popover.classList.remove('open');
+	})
+	:0;
+	for(let thmb of document.querySelectorAll('.thumbnail')){
+		thmb.addEventListener('click', e=>{
+			e.preventDefault();
+			popover.classList.add('open');
+		})
+	}
+</script>
+</html>

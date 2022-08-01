@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>BlaqApp</title>
+	<link rel="canonical" href="/" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<!-- Icons and Colors -->
+	<link rel="apple-touch-icon" sizes="180x180" href="asset/icons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="asset/icons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="asset/icons/favicon-16x16.png">
+	<link rel="manifest" href="manifest.json">
+	<link rel="mask-icon" href="asset/icons/safari-pinned-tab.svg" color="#000000">
+	<link rel="shortcut icon" href="asset/icons/favicon.ico">
+	<meta name="msapplication-TileColor" content="#000000">
+	<meta name="msapplication-TileImage" content="asset/icons/mstile-144x144.png">
+	<meta name="msapplication-config" content="browserconfig.xml">
+	<meta name="theme-color" content="#000000">
+
+	<script>
+		if ("serviceWorker" in navigator) {
+			window.addEventListener("load", () => {
+				navigator.serviceWorker && navigator.serviceWorker.register("sw.js");
+			});
+		}
+	</script>
+
+	<link rel="stylesheet" type="text/css" href="asset/css/main.css">
+
+</head>
+<body>
+
+	<div class="app">
+		<content class="content">
+			<div class="app-card">
+				<div class="app-card-head">
+					<strong>Welcome back, You've Missing Alot</strong>
+				</div>
+				<div class="app-card-body">
+					<form action="dashboard" method="post">
+						<div class="form-group">
+							<label>Enter Email or Mobile number</label>
+							<input type="text" name="email" required placeholder="" class="form-control">
+						</div>
+						<div class="form-group">
+							<label>Password</label>
+							<input type="password" name="password" required placeholder="" class="form-control">
+						</div>
+						<div class="form-group">
+							<button type="submit" class="form-control">Sign In</button>
+							<a href="/" class="form-control">Forgot password</a>
+						</div>
+					</form>
+				</div>
+			</div>
+		</content>
+	</div>
+
+</body>
+</html>
